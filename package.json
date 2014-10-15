@@ -4,6 +4,7 @@
   "description": "Simple Node.js & SQLite URL shortner",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "mocha"
   },
   "repository": {
