@@ -1,4 +1,4 @@
-# Longr
+# [Longr](https://github.com/carsondarling/longr)
 
 Longr is a simple URL-shortener built in Node.js and using SQLite3 as a backend. The goal of Longr is to provide an easy way to add a URL-shortening service onto an app, so there's no frontend.
 
@@ -40,13 +40,27 @@ Connection: keep-alive
 Moved Temporarily. Redirecting to http://google.com/1236234%
 ```
 
-### Configuration
+## Configuration
 
-### Docker
+Configuration for Longr is provided entirely by environment variables.
 
-### API
+__PORT:__ Port that Longr will listen on (default: `6430`)
 
-### Debugging
+__DOMAIN:__ Domain that URLs will start with (default: `http://localhost:$PORT`)
+
+__DB_PATH:__ Path to SQLite database file (default: `:memory:`)
+
+__ALPHABET:__ String of characters to use in shortened links, must not repeat (default: `hFDlqf4LXAMZonzat92xui51OpvjB0cCQY3kWdU8GVH7s6KEwPrTembJySgNRI`). The length of the alphabet determines the base of the encoding, and the ordering determines the value associated with each character. For example, using the alphabet `01` will cause the shortened links to be in binary. Using `0123456789` will be in decimal, and `0123456789ABCDEF` will be in hex. The longer the alphabet is, the fewer characters needed for a given link. The default value includes all URL-safe characters in a random order.
+
+__AUTH_USER & AUTH_PASS:__ Username for HTTP Basic authentication. Auth is only applied to creating links, not claiming them. Both `AUTH_USER` and `AUTH_PASS` must be provided for auth to be enabled.
+
+## Docker
+
+*Coming soon*
+
+## API
+
+## Debugging
 
 To see debugging output from Longr, set the `DEBUG` environment variable.
 
@@ -60,3 +74,7 @@ $ DEBUG=longr* npm start
   longr:app grabbing token +13s
   longr:app found link F -> http://google.com/1236234 +2ms
 ```
+
+## Copyright & License
+
+Copyright (c) 2014 Carson Darling - Released under the [MIT license](LICENSE).
