@@ -21,11 +21,13 @@
   },
   "homepage": "https://github.com/carsondarling/longr",
   "dependencies": {
+    "basic-auth": "^1.0.0",
     "bookshelf": "^0.7.7",
     "debug": "^2.0.0",
     "express": "^4.9.7",
     "knex": "^0.7.3",
-    "sqlite3": "^3.0.2"
+    "sqlite3": "^3.0.2",
+    "validator": "^3.20.0"
   },
   "devDependencies": {
     "mocha": "^1.21.5",
